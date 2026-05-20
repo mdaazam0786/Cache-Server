@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: proxy-server-python
+    env: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: ./
+    envVars:
+      - key: PROXY_ORIGIN
+        sync: false
+      - key: PORT
+        sync: false
+      - key: REDIS_HOST
+        sync: false
+      - key: REDIS_PORT
+        value: "6379"
+      - key: CACHE_KEY
+        value: "CACHE_KEY"
+      - key: RESPONSE_TTL
+        value: "1"
